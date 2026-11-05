@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <rect width="1280" height="800" fill="#e9e2d4"/>
+  <g transform="translate(80 110) rotate(-4)">
+    <rect width="560" height="620" rx="18" fill="#fbf8f2" stroke="#d3c9b5"/>
+    <rect width="560" height="40" rx="18" fill="#efe8da"/>
+    <circle cx="26" cy="20" r="6" fill="#d9481c"/><circle cx="46" cy="20" r="6" fill="#e2b04a"/><circle cx="66" cy="20" r="6" fill="#7aa36b"/>
+    <rect x="32" y="72" width="496" height="260" rx="12" fill="#3d4a3a"/>
+    <path d="M32 332 L190 190 L300 280 L400 210 L528 320 L528 332 Z" fill="#596b55"/>
+    <circle cx="440" cy="130" r="34" fill="#e7c88a"/>
+    <text x="32" y="392" font-family="'Arial Narrow', Arial, sans-serif" font-weight="800" font-size="44" fill="#22201a">The Riverside</text>
+    <text x="32" y="436" font-family="'Arial Narrow', Arial, sans-serif" font-weight="800" font-size="30" fill="#7a6f5c">Residences</text>
+    <rect x="32" y="476" width="200" height="52" rx="26" fill="#22201a"/>
+    <rect x="248" y="476" width="150" height="52" rx="26" fill="none" stroke="#22201a"/>
+    <rect x="32" y="560" width="150" height="10" rx="5" fill="#d3c9b5"/><rect x="200" y="560" width="110" height="10" rx="5" fill="#d3c9b5"/>
+  </g>
+  <g transform="translate(640 150) rotate(3)">
+    <rect width="560" height="560" rx="18" fill="#1d1b17"/>
+    <rect width="560" height="40" rx="18" fill="#2a2721"/>
+    <text x="40" y="130" font-family="'Arial Narrow', Arial, sans-serif" font-weight="800" font-size="56" fill="#f1ece1">Atelier</text>
+    <text x="40" y="190" font-family="'Arial Narrow', Arial, sans-serif" font-weight="800" font-size="56" fill="#d9a46a">Nội thất</text>
+    <rect x="40" y="226" width="220" height="10" rx="5" fill="#4a453b"/><rect x="40" y="248" width="180" height="10" rx="5" fill="#4a453b"/>
+    <rect x="300" y="80" width="220" height="300" rx="110" fill="#b97f4a"/>
+    <rect x="330" y="250" width="160" height="70" rx="20" fill="#e9dcc6"/>
+    <rect x="345" y="320" width="10" height="40" fill="#e9dcc6"/><rect x="465" y="320" width="10" height="40" fill="#e9dcc6"/>
+    <g fill="#2f2b24"><rect x="40" y="420" width="150" height="100" rx="12"/><rect x="205" y="420" width="150" height="100" rx="12"/><rect x="370" y="420" width="150" height="100" rx="12"/></g>
+  </g>
+</svg>

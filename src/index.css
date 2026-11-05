@@ -1,0 +1,223 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * World: Saigon hand-painted shop signs.
+ * Enamel panels (red, yellow, cobalt, green, white) hang on a lime-washed wall
+ * by day, and on the night street in dark mode. The panels keep their colours
+ * in both themes; only the wall and the text set on it change.
+ */
+:root {
+  --wall: #d3e6de; /* vôi xanh: mint lime-wash */
+  --wall-2: #c3dbd1;
+  --on-wall: #141414;
+  --on-wall-soft: #33443d;
+  --wall-line: #9fbdb1;
+
+  --ink: #141414;
+  --enamel: #fbfaf4;
+  --enamel-soft: #4b4a45; /* secondary text on white enamel */
+  --red: #d4231c;
+  --red-deep: #a8150f;
+  --yellow: #ffcc1a;
+  --blue: #1746a6;
+  --green: #0a5f38;
+
+  color-scheme: light;
+}
+
+.dark {
+  --wall: #101413; /* the street at night */
+  --wall-2: #18201d;
+  --on-wall: #eef3f0;
+  --on-wall-soft: #a9bab3;
+  --wall-line: #2c3a35;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-letter: 'Big Shoulders Display', 'Big Shoulders Fallback', sans-serif;
+  --font-plaque: 'Bungee', 'Bungee Fallback', sans-serif;
+  --font-sans: 'Be Vietnam Pro', 'Be Vietnam Pro Fallback', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --color-wall: var(--wall);
+  --color-wall-2: var(--wall-2);
+  --color-on-wall: var(--on-wall);
+  --color-on-wall-soft: var(--on-wall-soft);
+  --color-wall-line: var(--wall-line);
+  --color-ink: var(--ink);
+  --color-enamel: var(--enamel);
+  --color-enamel-soft: var(--enamel-soft);
+  --color-red: var(--red);
+  --color-red-deep: var(--red-deep);
+  --color-yellow: var(--yellow);
+  --color-blue: var(--blue);
+  --color-green: var(--green);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: var(--red) var(--wall-2);
+  }
+
+  body {
+    overflow-x: clip;
+    background-color: var(--wall);
+    color: var(--on-wall);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    caret-color: var(--red);
+    font-variant-numeric: tabular-nums;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  ::selection {
+    background: var(--yellow);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--yellow);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px var(--ink);
+    border-radius: 2px;
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /*
+   * A painted sheet-metal sign: a frame line painted just inside the edge and
+   * four mounting bolts. Set the panel colour with bg-* and text-* utilities.
+   */
+  .sign {
+    position: relative;
+    border: 3px solid var(--ink);
+    border-radius: 6px;
+    box-shadow: 0 18px 32px -22px rgb(0 0 0 / 0.6);
+    --bolt: radial-gradient(circle at 40% 35%, #f3f3ee 0 1.5px, #8e8d86 2.5px, #3a3a36 4.5px, transparent 5px);
+    background-image: var(--bolt), var(--bolt), var(--bolt), var(--bolt);
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position:
+      10px 10px,
+      calc(100% - 10px) 10px,
+      10px calc(100% - 10px),
+      calc(100% - 10px) calc(100% - 10px);
+  }
+  /* The sign painter's pinstripe, a few pixels inside the edge */
+  .sign::after {
+    content: '';
+    position: absolute;
+    inset: 7px 26px;
+    border-block: 2px solid currentColor;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  /* Painted lettering with a solid shade (chữ đổ bóng) */
+  .letter {
+    font-family: var(--font-letter);
+    font-weight: 850;
+    text-transform: uppercase;
+    /* Vietnamese stacks marks above capitals (Ầ, Ễ, Ở): keep room between lines */
+    line-height: 0.98;
+    letter-spacing: 0.005em;
+    --shade: var(--ink);
+    text-shadow: 0.045em 0.05em 0 var(--shade);
+  }
+  .letter-flat {
+    font-family: var(--font-letter);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .plaque {
+    font-family: var(--font-plaque);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
+  /* Buttons are small painted plaques */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    border: 3px solid var(--ink);
+    border-radius: 4px;
+    padding: 0.8rem 1.15rem 0.7rem;
+    font-family: var(--font-plaque);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    line-height: 1;
+    box-shadow: 0 2px 6px -2px rgb(0 0 0 / 0.35);
+    transition:
+      transform 0.18s var(--ease-out-expo),
+      box-shadow 0.18s var(--ease-out-expo),
+      background-color 0.2s ease;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 18px -8px rgb(0 0 0 / 0.45);
+  }
+  .btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px -1px rgb(0 0 0 / 0.4);
+  }
+  .btn-red {
+    background: var(--red);
+    color: var(--enamel);
+  }
+  .btn-red:hover {
+    background: var(--red-deep);
+  }
+  .btn-yellow {
+    background: var(--yellow);
+    color: var(--ink);
+  }
+  .btn-white {
+    background: var(--enamel);
+    color: var(--ink);
+  }
+  .btn-white:hover,
+  .btn-yellow:hover {
+    background: #fff;
+  }
+
+  /* Price-board dotted leader between a name and its price */
+  .leader {
+    flex: 1;
+    min-width: 2rem;
+    border-bottom: 3px dotted currentColor;
+    opacity: 0.55;
+    transform: translateY(-0.35em);
+  }
+}
