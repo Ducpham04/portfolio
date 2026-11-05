@@ -17,8 +17,8 @@ export const services: Service[] = [
     id: 'landing',
     title: { vi: 'Landing page cao cấp', en: 'Premium landing pages' },
     description: {
-      vi: 'Trang đích được thiết kế riêng, tải nhanh, chuẩn SEO, tối ưu chuyển đổi — phù hợp BĐS, nội thất, dịch vụ.',
-      en: 'Custom-designed, fast, SEO-ready landing pages built to convert — great for real estate, interiors and services.',
+      vi: 'Trang đích được thiết kế riêng, tải nhanh, chuẩn SEO, tối ưu chuyển đổi. Phù hợp BĐS, nội thất, dịch vụ.',
+      en: 'Custom-designed, fast, SEO-ready landing pages built to convert. Great for real estate, interiors and services.',
     },
     features: [
       { vi: 'Thiết kế độc bản, không dùng template', en: 'Bespoke design, no templates' },
@@ -32,8 +32,8 @@ export const services: Service[] = [
     id: 'sme',
     title: { vi: 'Hệ thống quản lý cho SME', en: 'Management systems for SMEs' },
     description: {
-      vi: 'Phần mềm quản lý bán hàng, kho, nhân sự, khách hàng — đo ni đóng giày theo quy trình của doanh nghiệp bạn.',
-      en: 'Sales, inventory, HR and CRM software — tailored to the way your business actually works.',
+      vi: 'Phần mềm quản lý bán hàng, kho, nhân sự, khách hàng, đo ni đóng giày theo quy trình của doanh nghiệp bạn.',
+      en: 'Sales, inventory, HR and CRM software, tailored to the way your business actually works.',
     },
     features: [
       { vi: 'Dashboard & báo cáo', en: 'Dashboards & reports' },
@@ -47,8 +47,8 @@ export const services: Service[] = [
     id: 'backend',
     title: { vi: 'Spring Boot backend', en: 'Spring Boot backends' },
     description: {
-      vi: 'REST API bảo mật, có tài liệu, có test — sẵn sàng cho web, mobile và tích hợp bên thứ ba.',
-      en: 'Secure, documented, tested REST APIs — ready for web, mobile and third-party integrations.',
+      vi: 'REST API bảo mật, có tài liệu, có test, sẵn sàng cho web, mobile và tích hợp bên thứ ba.',
+      en: 'Secure, documented, tested REST APIs, ready for web, mobile and third-party integrations.',
     },
     features: [
       { vi: 'JWT / OAuth2, Spring Security', en: 'JWT / OAuth2, Spring Security' },

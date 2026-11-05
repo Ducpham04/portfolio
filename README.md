@@ -7,7 +7,7 @@ Website portfolio cá nhân: **Software Engineer (Java/Spring Boot, React) & fre
 
 | Lighthouse (local, `vite preview`) | Performance | Accessibility | Best Practices | SEO |
 | ---------------------------------- | ----------- | ------------- | -------------- | --- |
-| Mobile                             | 92          | 100           | 100            | 100 |
+| Mobile                             | 93–95       | 100           | 100            | 100 |
 | Desktop                            | 100         | 100           | 100            | 100 |
 
 ---
@@ -46,7 +46,7 @@ Mọi chuỗi song ngữ có dạng `{ vi: '…', en: '…' }` — TypeScript s�
 | Muốn sửa                                                          | File                        |
 | ----------------------------------------------------------------- | --------------------------- |
 | Email, GitHub, LinkedIn, Fiverr, link CV, Formspree               | `src/data/profile.ts`       |
-| Đoạn giới thiệu, timeline (học vấn / MindX / freelance), số liệu  | `src/data/profile.ts` (`about`) |
+| Đoạn giới thiệu, timeline (học vấn / MindX / freelance)           | `src/data/profile.ts` (`about`) |
 | Nhóm kỹ năng                                                      | `src/data/skills.ts`        |
 | **Dự án** (ảnh, mô tả, tech tags, link demo/GitHub)               | `src/data/projects.ts`      |
 | Dịch vụ, giá khởi điểm, link Fiverr                               | `src/data/services.ts`      |
@@ -98,7 +98,7 @@ Domain đang là placeholder `https://phamvanduc.vercel.app`. Khi có domain th�
 - [ ] Link demo/GitHub của từng dự án + ảnh thật trong `public/projects/`
 - [ ] `public/cv.pdf`
 - [ ] Domain trong `index.html`, `robots.txt`, `sitemap.xml`
-- [ ] Số liệu ở phần About (`about.stats`), mốc thời gian timeline, giá dịch vụ
+- [ ] Mốc thời gian timeline, giá dịch vụ
 
 ---
 
@@ -142,7 +142,7 @@ Repo có sẵn `render.yaml` (Blueprint):
     ├── theme/               # dark/light mode
     ├── sections/            # Hero, About, Skills, Projects, Services, Contact
     ├── components/          # Header, Footer, Reveal (animation khi scroll), icons…
-    ├── assets/fonts/        # Fraunces + Be Vietnam Pro (tự host, chỉ subset latin + tiếng Việt)
+    ├── assets/fonts/        # Big Shoulders Display + Bungee + Be Vietnam Pro (tự host, subset latin + tiếng Việt)
     ├── Root.tsx             # providers dùng chung cho client & prerender
     ├── main.tsx             # entry phía client (hydrate)
     └── entry-server.tsx     # entry dùng khi prerender
@@ -153,4 +153,5 @@ Repo có sẵn `render.yaml` (Blueprint):
 - **Ngôn ngữ:** lựa chọn được lưu trong `localStorage` (`lang`) và đồng bộ lên URL (`/` ↔ `/en/`) để chia sẻ link đúng ngôn ngữ; có `hreflang` cho SEO.
 - **Theme:** lưu trong `localStorage` (`theme`); nếu chưa chọn thì theo cài đặt hệ điều hành. Script nhỏ trong `<head>` áp theme trước khi paint nên không bị nháy.
 - **Animation:** Framer Motion qua `LazyMotion` (tải lười), tự tắt khi người dùng bật *reduce motion*.
-- **Font:** Fraunces (tiêu đề) và Be Vietnam Pro (nội dung), giấy phép SIL OFL 1.1.
+- **Font:** Big Shoulders Display (chữ biển hiệu), Bungee (nhãn/nút), Be Vietnam Pro (nội dung), giấy phép SIL OFL 1.1. Có font fallback khớp kích thước để tránh layout shift.
+- **Thiết kế:** hướng "Biển hiệu Sài Gòn" được chọn qua skill [Impeccable](https://github.com/pbakaus/impeccable) (cài tại `.claude/skills/impeccable`). Bối cảnh sản phẩm: `PRODUCT.md`; hợp đồng thiết kế: `.impeccable/surfaces/src-app-tsx.md`. Xem thêm `docs/HANDOFF.md`.

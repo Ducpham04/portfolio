@@ -14,23 +14,16 @@ function LangToggle() {
       type="button"
       onClick={toggleLang}
       aria-label={t.a11y.toggleLang}
-      className="relative flex h-10 items-center rounded-full border border-line p-1 font-mono text-xs transition-colors hover:border-ink"
+      className="plaque flex h-10 items-stretch overflow-hidden rounded-[3px] border-2 border-enamel/70 text-xs transition-colors hover:border-yellow"
     >
       {(['vi', 'en'] as const).map((code) => (
         <span
           key={code}
           aria-hidden
-          className={`relative z-10 flex h-8 w-9 items-center justify-center rounded-full uppercase transition-colors ${
-            lang === code ? 'text-paper' : 'text-ink-soft'
+          className={`flex w-10 items-center justify-center transition-colors ${
+            lang === code ? 'bg-yellow text-ink' : 'text-enamel/75'
           }`}
         >
-          {lang === code && (
-            <m.span
-              layoutId="lang-pill"
-              className="absolute inset-0 -z-10 rounded-full bg-ink"
-              transition={{ type: 'spring', stiffness: 500, damping: 35 }}
-            />
-          )}
           {code}
         </span>
       ))}
@@ -47,7 +40,7 @@ function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       aria-label={t.a11y.toggleTheme}
-      className="group flex h-10 w-10 items-center justify-center rounded-full border border-line transition-colors hover:border-ink"
+      className="group flex h-10 w-10 items-center justify-center rounded-[3px] border-2 border-enamel/70 text-enamel transition-colors hover:border-yellow hover:text-yellow"
     >
       <Moon width={18} height={18} className="transition-transform duration-500 group-hover:-rotate-12 dark:hidden" />
       <Sun width={18} height={18} className="hidden transition-transform duration-500 group-hover:rotate-45 dark:block" />
@@ -80,22 +73,23 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
-        scrolled || open
-          ? 'border-b border-line bg-paper/80 backdrop-blur-md'
-          : 'border-b border-transparent'
+      className={`fixed inset-x-0 top-0 z-50 bg-ink text-enamel transition-shadow duration-300 ${
+        scrolled || open ? 'shadow-[0_10px_24px_-14px_rgb(0_0_0/0.7)]' : ''
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
-        <a href="#top" className="display text-2xl italic" aria-label={profile.name.en}>
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-8">
+        <a href="#top" className="plaque text-2xl text-yellow" aria-label={profile.name.en}>
           {profile.shortName}
         </a>
 
         <nav aria-label={t.a11y.primaryNav} className="hidden md:block">
-          <ul className="flex items-center gap-8 text-sm">
+          <ul className="flex items-center gap-1 text-sm font-medium">
             {SECTIONS.map((id) => (
               <li key={id}>
-                <a href={`#${id}`} className="link-underline py-1 text-ink-soft transition-colors hover:text-ink">
+                <a
+                  href={`#${id}`}
+                  className="rounded-[3px] px-3 py-2 text-enamel transition-colors hover:bg-enamel hover:text-ink"
+                >
                   {t.nav[id]}
                 </a>
               </li>
@@ -112,7 +106,7 @@ export function Header() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? t.a11y.closeMenu : t.a11y.openMenu}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-line md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-[3px] border-2 border-enamel/70 md:hidden"
           >
             {open ? <Close width={18} height={18} /> : <Menu width={18} height={18} />}
           </button>
@@ -128,7 +122,7 @@ export function Header() {
             animate={{ opacity: 1, height: '100dvh' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden bg-paper md:hidden"
+            className="overflow-hidden bg-ink md:hidden"
           >
             <ul className="flex flex-col gap-1 px-5 pt-8">
               {SECTIONS.map((id, i) => (
@@ -141,9 +135,8 @@ export function Header() {
                   <a
                     href={`#${id}`}
                     onClick={() => setOpen(false)}
-                    className="display flex items-baseline gap-4 border-b border-line py-4 text-4xl"
+                    className="letter-flat block border-b-2 border-enamel/15 py-4 text-5xl text-enamel"
                   >
-                    <span className="font-mono text-xs text-ink-soft">0{i + 1}</span>
                     {t.nav[id]}
                   </a>
                 </m.li>

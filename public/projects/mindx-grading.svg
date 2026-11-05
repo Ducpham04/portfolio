@@ -3,7 +3,7 @@
   <rect x="80" y="80" width="1120" height="640" rx="28" fill="#fff" stroke="#f1d6cb"/>
   <rect x="80" y="80" width="260" height="640" rx="28" fill="#c8102e"/>
   <rect x="300" y="80" width="40" height="640" fill="#c8102e"/>
-  <text x="120" y="160" font-family="Georgia, serif" font-style="italic" font-size="44" fill="#fff">Grader</text>
+  <text x="120" y="160" font-family="'Arial Narrow', Arial, sans-serif" font-weight="800" font-size="44" fill="#fff">Grader</text>
   <g fill="#fff" opacity=".85"><rect x="120" y="220" width="160" height="14" rx="7"/><rect x="120" y="262" width="120" height="14" rx="7" opacity=".6"/><rect x="120" y="304" width="140" height="14" rx="7" opacity=".6"/><rect x="120" y="346" width="100" height="14" rx="7" opacity=".6"/></g>
   <text x="400" y="170" font-family="sans-serif" font-size="34" font-weight="700" fill="#2b1a17">Lớp JSA-12 · Bài 05</text>
   <text x="400" y="210" font-family="monospace" font-size="20" fill="#9b7a70">28 submissions · auto-graded in 41s</text>

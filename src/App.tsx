@@ -11,10 +11,10 @@ import { Skills } from './sections/Skills'
 export default function App() {
   const { t } = useLanguage()
   return (
-    <div className="grain">
+    <div>
       <a
         href="#main"
-        className="fixed top-3 left-3 z-[100] -translate-y-20 rounded-full bg-ink px-4 py-2 text-sm text-paper transition-transform focus:translate-y-0"
+        className="plaque fixed top-3 left-3 z-[100] -translate-y-20 rounded-[3px] bg-yellow px-4 py-2 text-sm text-ink transition-transform focus:translate-y-0"
       >
         {t.a11y.skip}
       </a>

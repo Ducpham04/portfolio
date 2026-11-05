@@ -1,38 +1,38 @@
 /*
  * Self-hosted fonts — only the Latin + Vietnamese subsets are shipped
  * (the latin-ext subset overlaps on "Đ" and would otherwise always download).
- * Fraunces & Be Vietnam Pro are licensed under the SIL Open Font License 1.1.
+ * Big Shoulders Display, Bungee & Be Vietnam Pro: SIL Open Font License 1.1.
  */
 @font-face {
-  font-family: 'Fraunces Variable';
+  font-family: 'Big Shoulders Display';
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
-  src: url('./fraunces-vietnamese-wght-normal.woff2') format('woff2-variations');
+  src: url('./big-shoulders-display-vietnamese-wght-normal.woff2') format('woff2-variations');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
 }
 @font-face {
-  font-family: 'Fraunces Variable';
+  font-family: 'Big Shoulders Display';
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
-  src: url('./fraunces-latin-wght-normal.woff2') format('woff2-variations');
+  src: url('./big-shoulders-display-latin-wght-normal.woff2') format('woff2-variations');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Fraunces Variable';
-  font-style: italic;
+  font-family: 'Bungee';
+  font-style: normal;
   font-display: swap;
-  font-weight: 100 900;
-  src: url('./fraunces-vietnamese-wght-italic.woff2') format('woff2-variations');
+  font-weight: 400;
+  src: url('./bungee-vietnamese-400-normal.woff2') format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
 }
 @font-face {
-  font-family: 'Fraunces Variable';
-  font-style: italic;
+  font-family: 'Bungee';
+  font-style: normal;
   font-display: swap;
-  font-weight: 100 900;
-  src: url('./fraunces-latin-wght-italic.woff2') format('woff2-variations');
+  font-weight: 400;
+  src: url('./bungee-latin-400-normal.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -66,4 +66,28 @@
   font-weight: 500;
   src: url('./be-vietnam-pro-latin-500-normal.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/*
+ * Metric-matched fallbacks: while the web fonts load, text is set in a local
+ * Arial scaled to the same width, so lines break in the same places and the
+ * signs don't jump when the real fonts arrive (keeps CLS near zero).
+ * size-adjust values were measured against each face's average advance width.
+ */
+@font-face {
+  font-family: 'Big Shoulders Fallback';
+  src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'), local('LiberationSans-Bold');
+  font-weight: 100 900;
+  size-adjust: 67.6%;
+}
+@font-face {
+  font-family: 'Bungee Fallback';
+  src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'), local('LiberationSans-Bold');
+  size-adjust: 99.4%;
+}
+@font-face {
+  font-family: 'Be Vietnam Pro Fallback';
+  src: local('Arial'), local('ArialMT'), local('Liberation Sans'), local('LiberationSans');
+  font-weight: 100 900;
+  size-adjust: 108.5%;
 }

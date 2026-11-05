@@ -1,42 +1,49 @@
-import { m } from 'framer-motion'
 import { Reveal } from '../components/Reveal'
-import { SectionHeading } from '../components/SectionHeading'
 import { skillGroups } from '../data/skills'
 import { useLanguage } from '../i18n/useLanguage'
 
+/**
+ * A "CHUYÊN:" board, the way a workshop sign lists its trades:
+ * one painted row per group, the items run together with dots.
+ */
 export function Skills() {
   const { t, l } = useLanguage()
   return (
-    <section id="skills" aria-labelledby="skills-title" className="bg-paper-2/50 py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <SectionHeading id="skills" eyebrow={t.skills.eyebrow} heading={t.skills.heading} sub={t.skills.sub} />
-
-        <div className="grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2">
-          {skillGroups.map((group, i) => (
-            <Reveal key={group.id} delay={(i % 2) * 0.08} className="group bg-paper p-7 sm:p-10">
-              <div className="flex items-baseline justify-between">
-                <h3 className="display text-3xl sm:text-4xl">{l(group.title)}</h3>
-                <span className="font-mono text-xs text-ink-soft">0{i + 1}</span>
-              </div>
-              <p className="mt-3 text-ink-soft">{l(group.blurb)}</p>
-              <ul className="mt-8 flex flex-wrap gap-2">
-                {group.items.map((item, j) => (
-                  <m.li
-                    key={item}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.15 + j * 0.04, duration: 0.4 }}
-                    className="rounded-full border border-line px-3.5 py-1.5 text-sm transition-colors duration-200 hover:border-accent hover:text-accent-ink"
-                  >
-                    {item}
-                  </m.li>
-                ))}
-              </ul>
-            </Reveal>
-          ))}
+    <section id="skills" aria-labelledby="skills-title" className="mx-auto max-w-7xl px-3 py-12 sm:px-6 md:py-16">
+      <Reveal className="sign bg-green px-5 pt-9 pb-8 text-enamel sm:px-12 sm:pt-12 sm:pb-10">
+        <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
+          <h2 id="skills-title" className="letter text-[clamp(3rem,9vw,6.5rem)]">
+            {t.skills.heading}:
+          </h2>
+          <p className="max-w-sm pb-2 text-pretty text-enamel">{t.skills.sub}</p>
         </div>
-      </div>
+
+        <ul className="mt-8 border-t-2 border-enamel/30">
+          {skillGroups.map((group) => (
+            <li key={group.id} className="grid grid-cols-1 gap-2 border-b-2 border-enamel/30 py-5 md:grid-cols-12 md:items-baseline md:gap-8">
+              <h3 className="plaque text-xl text-yellow md:col-span-3">{l(group.title)}</h3>
+              <div className="min-w-0 md:col-span-9">
+                <p className="letter-flat text-[clamp(1.6rem,3.4vw,2.4rem)] leading-tight">
+                  {group.items.map((item, i) => (
+                    <span key={item}>
+                      <span className="whitespace-nowrap">
+                        {item}
+                        {i < group.items.length - 1 && (
+                          <span aria-hidden className="ml-2 text-yellow">
+                            ·
+                          </span>
+                        )}
+                      </span>
+                      {i < group.items.length - 1 && <span className="sr-only">,</span>}{' '}
+                    </span>
+                  ))}
+                </p>
+                <p className="mt-2 text-sm text-enamel">{l(group.blurb)}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </Reveal>
     </section>
   )
 }

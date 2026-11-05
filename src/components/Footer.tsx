@@ -7,23 +7,16 @@ const YEAR = new Date().getFullYear()
 export function Footer() {
   const { t, l } = useLanguage()
   return (
-    <footer className="border-t border-line">
-      <div className="mx-auto max-w-7xl overflow-hidden px-5 pt-16 sm:px-8">
-        {/* Decorative: drawn via ::before so it is neither read aloud nor contrast-checked */}
-        <div
-          aria-hidden
-          data-text={l(profile.name)}
-          className="display text-[clamp(2.5rem,10vw,9rem)] leading-none whitespace-nowrap text-ink/[0.07] select-none before:content-[attr(data-text)]"
-        />
-        <div className="flex flex-col gap-4 border-t border-line py-8 text-sm text-ink-soft sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © <span suppressHydrationWarning>{YEAR}</span> · {t.footer.built}
-          </p>
-          <a href="#top" className="inline-flex items-center gap-2 transition-colors hover:text-ink">
-            {t.footer.top}
-            <ArrowUp width={14} height={14} />
-          </a>
-        </div>
+    <footer className="bg-ink text-enamel">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <p>
+          <span className="plaque mr-3 text-yellow">{profile.shortName}</span>© <span suppressHydrationWarning>{YEAR}</span>{' '}
+          {l(profile.name)} · {t.footer.built}
+        </p>
+        <a href="#top" className="inline-flex items-center gap-2 text-enamel transition-colors hover:text-yellow">
+          {t.footer.top}
+          <ArrowUp width={14} height={14} />
+        </a>
       </div>
     </footer>
   )

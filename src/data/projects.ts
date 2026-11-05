@@ -75,7 +75,7 @@ export const projects: Project[] = [
     tags: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion'],
     image: '/projects/landing-pages.svg',
     imageAlt: { vi: 'Bộ sưu tập landing page BĐS và nội thất', en: 'Real-estate and interior landing pages' },
-    year: '2024 — 2025',
+    year: '2024–2025',
     demoUrl: 'https://example.com/landing',
   },
   {
@@ -83,8 +83,8 @@ export const projects: Project[] = [
     title: 'MindX Grading Tool',
     kind: { vi: 'Công cụ nội bộ · Giáo dục', en: 'Internal tool · Education' },
     description: {
-      vi: 'Công cụ chấm bài tự động cho giáo viên MindX: chạy test trên bài nộp, tổng hợp điểm và gửi nhận xét — tiết kiệm hàng giờ mỗi tuần.',
-      en: 'An auto-grading tool for MindX teachers: runs tests against submissions, aggregates scores and sends feedback — saving hours every week.',
+      vi: 'Công cụ chấm bài tự động cho giáo viên MindX: chạy test trên bài nộp, tổng hợp điểm và gửi nhận xét, tiết kiệm hàng giờ mỗi tuần.',
+      en: 'An auto-grading tool for MindX teachers: runs tests against submissions, aggregates scores and sends feedback, saving hours every week.',
     },
     role: { vi: 'Tác giả', en: 'Author' },
     tags: ['Node.js', 'React', 'Google Sheets API'],

@@ -1,9 +1,8 @@
 import { AnimatePresence, m } from 'framer-motion'
 import { useState, type FormEvent } from 'react'
 import { ExternalLink } from '../components/ExternalLink'
-import { ArrowUpRight, Check, Copy, Fiverr, Github, Linkedin, Mail } from '../components/icons'
+import { ArrowUpRight, Check, Copy, Fiverr, Github, Linkedin } from '../components/icons'
 import { Reveal } from '../components/Reveal'
-import { SectionHeading } from '../components/SectionHeading'
 import { profile } from '../data/profile'
 import { useLanguage } from '../i18n/useLanguage'
 
@@ -12,7 +11,7 @@ type Status = 'idle' | 'sending' | 'success' | 'error'
 const socialIcon = { GitHub: Github, LinkedIn: Linkedin, Fiverr } as const
 
 const fieldClass =
-  'w-full rounded-2xl border border-line bg-card px-4 py-3.5 text-base text-ink placeholder:text-ink-soft/70 transition-colors focus:border-ink focus:outline-none focus-visible:outline-2 focus-visible:outline-accent'
+  'w-full rounded-[3px] border-[3px] border-ink bg-white px-4 py-3 text-base text-ink placeholder:text-enamel-soft transition-colors focus:border-blue'
 
 export function Contact() {
   const { t } = useLanguage()
@@ -27,7 +26,9 @@ export function Contact() {
 
     if (!useFormspree) {
       const subject = encodeURIComponent(`[Portfolio] ${data.get('name') ?? ''}`)
-      const body = encodeURIComponent(`${data.get('message') ?? ''}\n\n— ${data.get('name') ?? ''} <${data.get('email') ?? ''}>`)
+      const body = encodeURIComponent(
+        `${data.get('message') ?? ''}\n\n— ${data.get('name') ?? ''} <${data.get('email') ?? ''}>`,
+      )
       window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
       return
     }
@@ -58,12 +59,68 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" aria-labelledby="contact-title" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 md:py-32">
-      <SectionHeading id="contact" eyebrow={t.contact.eyebrow} heading={t.contact.heading} sub={t.contact.sub} />
+    <section
+      id="contact"
+      aria-labelledby="contact-title"
+      className="mx-auto max-w-7xl px-3 pt-12 pb-20 sm:px-6 md:pt-16 md:pb-28"
+    >
+      <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
+        <Reveal className="sign bg-red px-5 pt-9 pb-8 text-enamel sm:px-12 sm:pt-12 sm:pb-12 lg:col-span-7">
+          <h2 id="contact-title" className="letter text-[clamp(3.25rem,11vw,8rem)]">
+            {t.contact.heading}
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg text-pretty text-enamel">{t.contact.sub}</p>
 
-      <div className="grid gap-14 md:grid-cols-12 md:gap-8">
-        <Reveal className="md:col-[4/span_5]">
-          <form onSubmit={handleSubmit} className="space-y-5" noValidate={false}>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <a
+              href={`mailto:${profile.email}`}
+              className="letter text-[clamp(1.6rem,4.6vw,3rem)] break-all normal-case underline-offset-[0.15em] hover:underline"
+            >
+              {profile.email}
+            </a>
+            <button
+              type="button"
+              onClick={copyEmail}
+              className="btn btn-white !px-3 !py-2.5 !text-xs"
+              aria-label={copied ? t.contact.copied : t.contact.copy}
+            >
+              {copied ? <Check width={16} height={16} /> : <Copy width={16} height={16} />}
+              <span aria-hidden>{copied ? t.contact.copied : t.contact.copy}</span>
+            </button>
+          </div>
+
+          <div className="mt-10">
+            <p className="plaque text-sm text-enamel">{t.contact.or}</p>
+            <ul className="mt-4 space-y-3">
+              {profile.socials.map((s) => {
+                const Icon = socialIcon[s.label]
+                return (
+                  <li key={s.label}>
+                    <ExternalLink
+                      href={s.href}
+                      className="group flex items-center justify-between rounded-[3px] border-[3px] border-ink bg-ink/25 px-4 py-3.5 transition-colors hover:bg-enamel hover:text-ink"
+                    >
+                      <span className="flex items-center gap-3">
+                        <Icon width={20} height={20} />
+                        <span className="plaque text-base">{s.label}</span>
+                        <span className="text-sm opacity-85">{s.handle}</span>
+                      </span>
+                      <ArrowUpRight
+                        width={18}
+                        height={18}
+                        className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
+                    </ExternalLink>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.1} className="sign self-start bg-enamel px-5 py-8 text-ink sm:px-10 lg:col-span-5">
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <h3 className="plaque text-lg text-blue">{t.contact.formTitle}</h3>
             <div>
               <label htmlFor="name" className="mb-2 block text-sm font-medium">
                 {t.contact.name}
@@ -90,20 +147,28 @@ export function Contact() {
               />
             </div>
             <div className="flex flex-wrap items-center gap-4">
-              <button type="submit" disabled={status === 'sending'} className="btn btn-primary group disabled:opacity-60">
+              <button
+                type="submit"
+                disabled={status === 'sending'}
+                className="btn btn-red group disabled:cursor-wait disabled:opacity-60"
+              >
                 {status === 'sending' ? t.contact.sending : t.contact.send}
-                <ArrowUpRight width={18} height={18} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight
+                  width={18}
+                  height={18}
+                  className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
               </button>
-              {!useFormspree && <p className="text-sm text-ink-soft">{t.contact.mailtoNote}</p>}
+              {!useFormspree && <p className="text-sm text-pretty text-enamel-soft">{t.contact.mailtoNote}</p>}
             </div>
-            <div aria-live="polite" className="min-h-6 text-sm">
+            <div aria-live="polite" className="min-h-6 text-sm font-medium">
               <AnimatePresence>
                 {(status === 'success' || status === 'error') && (
                   <m.p
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ y: 6 }}
+                    animate={{ y: 0 }}
                     exit={{ opacity: 0 }}
-                    className={status === 'success' ? 'text-emerald-700 dark:text-emerald-400' : 'text-accent-ink'}
+                    className={status === 'success' ? 'text-green' : 'text-red-deep'}
                   >
                     {status === 'success' ? t.contact.success : t.contact.error}
                   </m.p>
@@ -111,53 +176,6 @@ export function Contact() {
               </AnimatePresence>
             </div>
           </form>
-        </Reveal>
-
-        <Reveal delay={0.1} className="md:col-span-4">
-          <div className="flex flex-col gap-8">
-            <div>
-              <p className="eyebrow mb-3">Email</p>
-              <div className="flex flex-wrap items-center gap-3">
-                <a href={`mailto:${profile.email}`} className="link-underline inline-flex items-center gap-2 text-lg break-all sm:text-xl">
-                  <Mail width={18} height={18} className="shrink-0" />
-                  {profile.email}
-                </a>
-                <button
-                  type="button"
-                  onClick={copyEmail}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line transition-colors hover:border-ink"
-                  aria-label={copied ? t.contact.copied : t.contact.copy}
-                >
-                  {copied ? <Check width={16} height={16} /> : <Copy width={16} height={16} />}
-                </button>
-              </div>
-            </div>
-
-            <div>
-              <p className="eyebrow mb-3">{t.contact.or}</p>
-              <ul className="divide-y divide-line border-y border-line">
-                {profile.socials.map((s) => {
-                  const Icon = socialIcon[s.label]
-                  return (
-                    <li key={s.label}>
-                      <ExternalLink href={s.href} className="group flex items-center justify-between py-4">
-                        <span className="flex items-center gap-3">
-                          <Icon width={18} height={18} />
-                          <span className="font-medium">{s.label}</span>
-                          <span className="font-mono text-xs text-ink-soft">{s.handle}</span>
-                        </span>
-                        <ArrowUpRight
-                          width={18}
-                          height={18}
-                          className="text-ink-soft transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent"
-                        />
-                      </ExternalLink>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          </div>
         </Reveal>
       </div>
     </section>

@@ -28,8 +28,7 @@ export const profile = {
 
 export const about: {
   paragraphs: Localized[]
-  timeline: { period: string; title: Localized; place: Localized; detail: Localized }[]
-  stats: { value: string; key: 'years' | 'projects' | 'students' }[]
+  timeline: { period: Localized; title: Localized; place: Localized; detail: Localized }[]
 } = {
   paragraphs: [
     {
@@ -37,19 +36,19 @@ export const about: {
       en: "I'm a final-year Software Engineering student at FPT University HCMC, focused on Java/Spring Boot for the backend and React for the frontend. I like systems that are clear: tidy APIs, consistent data and interfaces that don't make people think.",
     },
     {
-      vi: 'Song song với việc học, tôi giảng dạy lập trình tại MindX — nơi tôi học được cách giải thích điều phức tạp bằng ngôn ngữ đơn giản. Kỹ năng đó theo tôi vào từng dự án freelance: hiểu đúng nhu cầu khách hàng, đề xuất giải pháp vừa đủ, và bàn giao sản phẩm mà đội ngũ của họ có thể tự vận hành.',
-      en: 'Alongside my studies, I teach programming at MindX — where I learned to explain complex things in simple words. That skill follows me into every freelance project: understanding what clients actually need, proposing just-enough solutions, and handing over products their team can run on their own.',
+      vi: 'Song song với việc học, tôi giảng dạy lập trình tại MindX, nơi tôi học được cách giải thích điều phức tạp bằng ngôn ngữ đơn giản. Kỹ năng đó theo tôi vào từng dự án freelance: hiểu đúng nhu cầu khách hàng, đề xuất giải pháp vừa đủ, và bàn giao sản phẩm mà đội ngũ của họ có thể tự vận hành.',
+      en: 'Alongside my studies, I teach programming at MindX, where I learned to explain complex things in simple words. That skill follows me into every freelance project: understanding what clients actually need, proposing just-enough solutions, and handing over products their team can run on their own.',
     },
   ],
   timeline: [
     {
-      period: '2022 — 2026',
+      period: { vi: '2022–2026', en: '2022–2026' },
       title: { vi: 'Kỹ thuật Phần mềm', en: 'B.Sc. Software Engineering' },
       place: { vi: 'Đại học FPT TP.HCM', en: 'FPT University HCMC' },
       detail: { vi: 'Sinh viên năm cuối', en: 'Final year' },
     },
     {
-      period: '2024 — now',
+      period: { vi: '2024–nay', en: '2024–now' },
       title: { vi: 'Giảng viên lập trình', en: 'Programming Instructor' },
       place: { vi: 'MindX Technology School', en: 'MindX Technology School' },
       detail: {
@@ -58,7 +57,7 @@ export const about: {
       },
     },
     {
-      period: '2023 — now',
+      period: { vi: '2023–nay', en: '2023–now' },
       title: { vi: 'Freelance Developer', en: 'Freelance Developer' },
       place: { vi: 'Khách hàng VN & quốc tế', en: 'Local & international clients' },
       detail: {
@@ -66,10 +65,5 @@ export const about: {
         en: 'Landing pages, management systems, Spring Boot backends, Zalo Mini Apps',
       },
     },
-  ],
-  stats: [
-    { value: '4+', key: 'years' },
-    { value: '15+', key: 'projects' },
-    { value: '200+', key: 'students' },
   ],
 }
