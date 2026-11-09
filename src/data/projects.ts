@@ -25,6 +25,8 @@ export interface Project {
   demoUrl?: string
   repoUrl?: string
   featured?: boolean
+  /** true when `image` is a real screenshot (hides the "illustration" label) */
+  screenshot?: boolean
 }
 
 export const projects: Project[] = [
@@ -39,6 +41,7 @@ export const projects: Project[] = [
     role: { vi: 'Full-stack · dự án cá nhân', en: 'Full-stack · personal project' },
     tags: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'JWT', 'FastAPI', 'Docker'],
     image: '/projects/viway-fitness.webp',
+    screenshot: true,
     imageAlt: {
       vi: 'Luồng tập luyện của Viway: tổng quan, kế hoạch tuần, chi tiết buổi tập, đang tập với AI coach',
       en: 'Viway workout flow: overview, weekly plan, session detail, live training with an AI coach',
@@ -58,10 +61,11 @@ export const projects: Project[] = [
     },
     role: { vi: 'Technical Lead · nhóm 4 người', en: 'Technical Lead · team of 4' },
     tags: ['Zalo Mini App', 'REST API', 'RAG chatbot', 'Jira Scrum'],
-    image: '/projects/nghia-hanh-so.svg',
+    image: '/projects/nghia-hanh-so.webp',
+    screenshot: true,
     imageAlt: {
-      vi: 'Minh hoạ ứng dụng Nghĩa Hành Số',
-      en: 'Nghia Hanh So app illustration',
+      vi: 'Zalo Mini App Nghĩa Hành Số: trang chủ với trợ lý AI và tin nổi bật, form gửi phản ánh 3 bước có chọn thôn và bản đồ',
+      en: 'Nghia Hanh So Zalo Mini App: home screen with AI assistant and featured news, 3-step feedback form with area picker and map',
     },
     year: '2026',
   },

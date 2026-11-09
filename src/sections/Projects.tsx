@@ -55,9 +55,11 @@ function ProjectSign({ project, index }: { project: Project; index: number }) {
             decoding="async"
             className="aspect-[16/10] w-full object-cover"
           />
-          <figcaption className="plaque absolute right-2 bottom-2 rounded-[2px] bg-ink/85 px-2 py-1 text-xs text-enamel">
-            {t.projects.illustration}
-          </figcaption>
+          {!project.screenshot && (
+            <figcaption className="plaque absolute right-2 bottom-2 rounded-[2px] bg-ink/85 px-2 py-1 text-xs text-enamel">
+              {t.projects.illustration}
+            </figcaption>
+          )}
         </figure>
 
         <div className={`flex flex-1 flex-col pt-6 ${featured ? 'lg:col-span-5 lg:justify-center lg:pt-0' : ''}`}>
