@@ -86,7 +86,7 @@ Thay `public/cv.pdf` bằng CV thật (giữ nguyên tên file, hoặc đổi `c
 
 ### Domain / SEO
 
-Domain đang là placeholder `https://phamvanduc.vercel.app`. Khi có domain thật, tìm & thay chuỗi này trong:
+Domain đang là placeholder `https://phamvanduc.onrender.com`. Khi có domain thật, tìm & thay chuỗi này trong:
 `index.html`, `public/robots.txt`, `public/sitemap.xml`.
 Ảnh chia sẻ mạng xã hội: `public/og-image.png` (1200×630). Favicon: `public/favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`.
 

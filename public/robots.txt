@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://phamvanduc.vercel.app/sitemap.xml
+Sitemap: https://phamvanduc.onrender.com/sitemap.xml
