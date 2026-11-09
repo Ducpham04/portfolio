@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="8" fill="#d4231c"/>
+  <rect x="3" y="3" width="58" height="58" rx="6" fill="none" stroke="#141414" stroke-width="3"/>
+  <text x="34" y="51" text-anchor="middle" font-family="'Arial Narrow', 'Liberation Sans Narrow', Arial, sans-serif" font-weight="800" font-size="46" fill="#141414">Đ</text>
+  <text x="31" y="48" text-anchor="middle" font-family="'Arial Narrow', 'Liberation Sans Narrow', Arial, sans-serif" font-weight="800" font-size="46" fill="#fbfaf4">Đ</text>
+</svg>

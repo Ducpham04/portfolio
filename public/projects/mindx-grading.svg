@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <rect width="1280" height="800" fill="#fff4ef"/>
+  <rect x="80" y="80" width="1120" height="640" rx="28" fill="#fff" stroke="#f1d6cb"/>
+  <rect x="80" y="80" width="260" height="640" rx="28" fill="#c8102e"/>
+  <rect x="300" y="80" width="40" height="640" fill="#c8102e"/>
+  <text x="120" y="160" font-family="'Arial Narrow', Arial, sans-serif" font-weight="800" font-size="44" fill="#fff">Grader</text>
+  <g fill="#fff" opacity=".85"><rect x="120" y="220" width="160" height="14" rx="7"/><rect x="120" y="262" width="120" height="14" rx="7" opacity=".6"/><rect x="120" y="304" width="140" height="14" rx="7" opacity=".6"/><rect x="120" y="346" width="100" height="14" rx="7" opacity=".6"/></g>
+  <text x="400" y="170" font-family="sans-serif" font-size="34" font-weight="700" fill="#2b1a17">Lớp JSA-12 · Bài 05</text>
+  <text x="400" y="210" font-family="monospace" font-size="20" fill="#9b7a70">28 submissions · auto-graded in 41s</text>
+  <g font-family="monospace" font-size="20">
+    <g transform="translate(400 260)">
+      <rect width="740" height="64" rx="14" fill="#fff8f5"/><text x="24" y="40" fill="#2b1a17">nguyen.an</text>
+      <rect x="300" y="26" width="300" height="12" rx="6" fill="#f3e2db"/><rect x="300" y="26" width="285" height="12" rx="6" fill="#2fa36b"/><text x="640" y="40" fill="#2fa36b">9.5</text>
+    </g>
+    <g transform="translate(400 340)">
+      <rect width="740" height="64" rx="14" fill="#fff8f5"/><text x="24" y="40" fill="#2b1a17">tran.binh</text>
+      <rect x="300" y="26" width="300" height="12" rx="6" fill="#f3e2db"/><rect x="300" y="26" width="240" height="12" rx="6" fill="#2fa36b"/><text x="640" y="40" fill="#2fa36b">8.0</text>
+    </g>
+    <g transform="translate(400 420)">
+      <rect width="740" height="64" rx="14" fill="#fff8f5"/><text x="24" y="40" fill="#2b1a17">le.chi</text>
+      <rect x="300" y="26" width="300" height="12" rx="6" fill="#f3e2db"/><rect x="300" y="26" width="165" height="12" rx="6" fill="#e2a23b"/><text x="640" y="40" fill="#e2a23b">5.5</text>
+    </g>
+    <g transform="translate(400 500)">
+      <rect width="740" height="64" rx="14" fill="#fff8f5"/><text x="24" y="40" fill="#2b1a17">pham.dung</text>
+      <rect x="300" y="26" width="300" height="12" rx="6" fill="#f3e2db"/><rect x="300" y="26" width="270" height="12" rx="6" fill="#2fa36b"/><text x="640" y="40" fill="#2fa36b">9.0</text>
+    </g>
+  </g>
+  <rect x="400" y="610" width="220" height="56" rx="28" fill="#c8102e"/>
+  <text x="510" y="645" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="600" fill="#fff">Send feedback</text>
+</svg>
