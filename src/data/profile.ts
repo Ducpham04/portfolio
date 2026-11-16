@@ -41,6 +41,10 @@ export const about: {
       vi: 'Song song với việc học, tôi dạy lập trình tại MindX từ năm 2023, nơi tôi học cách giải thích điều phức tạp bằng ngôn ngữ đơn giản. Hiện tôi làm trưởng nhóm kỹ thuật cho đồ án tốt nghiệp Nghĩa Hành Số, một hệ thống phản ánh hiện trường được triển khai thật cho một xã.',
       en: "Alongside my studies, I have taught programming at MindX since 2023, where I learned to explain complex things in simple words. I'm now the technical lead of Nghia Hanh So, my graduation project: a citizen feedback system being deployed for a commune.",
     },
+    {
+      vi: 'Tôi cũng làm Cloud: OJT tại AWS (09–12/2025), tự thiết kế và vận hành Viway trên AWS, gồm sao lưu dữ liệu lên S3, cảnh báo ngân sách, phân quyền IAM và cắt giảm khoảng hai phần ba chi phí hạ tầng. Nghĩa Hành Số đang được triển khai trên máy chủ Viettel IDC.',
+      en: 'I also work on the cloud side: I did my OJT at AWS (Sep–Dec 2025) and designed and run Viway on AWS myself, with S3 backups, budget alerts and least-privilege IAM, cutting its infrastructure cost by about two thirds. Nghia Hanh So is being deployed on Viettel IDC servers.',
+    },
   ],
   timeline: [
     {
@@ -56,6 +60,15 @@ export const about: {
       detail: {
         vi: 'Dạy Python và lập trình web cơ bản; viết công cụ hỗ trợ chấm bài',
         en: 'Teaching Python and basic web programming; built a grading helper tool',
+      },
+    },
+    {
+      period: { vi: '09–12/2025', en: 'Sep–Dec 2025' },
+      title: { vi: 'Thực tập Cloud (OJT)', en: 'Cloud OJT Trainee' },
+      place: { vi: 'Amazon Web Services (AWS)', en: 'Amazon Web Services (AWS)' },
+      detail: {
+        vi: 'Học thiết kế kiến trúc AWS; triển khai Viway trên ECS Fargate, RDS, S3',
+        en: 'Learned AWS architecture design; deployed Viway on ECS Fargate, RDS and S3',
       },
     },
     {
