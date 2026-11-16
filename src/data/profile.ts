@@ -42,8 +42,8 @@ export const about: {
       en: "Alongside my studies, I have taught programming at MindX since 2023, where I learned to explain complex things in simple words. I'm now the technical lead of Nghia Hanh So, my graduation project: a citizen feedback system being deployed for a commune.",
     },
     {
-      vi: 'Tôi cũng làm Cloud: OJT tại AWS (09–12/2025), tự thiết kế và vận hành Viway trên AWS, gồm sao lưu dữ liệu lên S3, cảnh báo ngân sách, phân quyền IAM và cắt giảm khoảng hai phần ba chi phí hạ tầng. Nghĩa Hành Số đang được triển khai trên máy chủ Viettel IDC.',
-      en: 'I also work on the cloud side: I did my OJT at AWS (Sep–Dec 2025) and designed and run Viway on AWS myself, with S3 backups, budget alerts and least-privilege IAM, cutting its infrastructure cost by about two thirds. Nghia Hanh So is being deployed on Viettel IDC servers.',
+      vi: 'Tôi cũng làm Cloud: OJT tại AWS (09–12/2025), từng tự thiết kế và vận hành Viway trên AWS cho dự án cá nhân, gồm sao lưu dữ liệu lên S3, cảnh báo ngân sách, phân quyền IAM và cắt giảm khoảng hai phần ba chi phí hạ tầng. Nghĩa Hành Số đang được triển khai trên máy chủ Viettel IDC.',
+      en: 'I also work on the cloud side: I did my OJT at AWS (Sep–Dec 2025) and designed and ran Viway on AWS myself for a personal project, with S3 backups, budget alerts and least-privilege IAM, cutting its infrastructure cost by about two thirds. Nghia Hanh So is being deployed on Viettel IDC servers.',
     },
   ],
   timeline: [
