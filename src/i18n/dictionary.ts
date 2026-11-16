@@ -7,7 +7,7 @@ const vi = {
   meta: {
     title: 'Phạm Văn Đức — Web Developer · React & Spring Boot',
     description:
-      'Phạm Văn Đức — Web Developer (React, Spring Boot) tại TP.HCM. Sinh viên năm cuối Kỹ thuật Phần mềm ĐH FPT, giảng viên lập trình MindX. Dự án: Viway, Nghĩa Hành Số, Landing Templates.',
+      'Phạm Văn Đức — Web Developer (React, Spring Boot) và Cloud (AWS) tại TP.HCM. Sinh viên năm cuối Kỹ thuật Phần mềm ĐH FPT, giảng viên lập trình MindX. Dự án: Viway, Nghĩa Hành Số, Landing Templates.',
   },
   a11y: {
     skip: 'Bỏ qua tới nội dung chính',
@@ -25,13 +25,13 @@ const vi = {
     contact: 'Liên hệ',
   },
   hero: {
-    role: 'Web Developer · React · Spring Boot',
+    role: 'Web Developer · React · Spring Boot · AWS',
     based: 'TP. Hồ Chí Minh',
     taking: 'Đang tìm',
-    takingList: 'Web Developer · Fresher',
+    takingList: 'Web Developer · Cloud Fresher',
     contactLabel: 'LH',
     intro:
-      'Sinh viên năm cuối Kỹ thuật Phần mềm (ĐH FPT), giảng viên lập trình tại MindX. Tôi làm website và web app responsive bằng React và Spring Boot, tự kết nối API và tự triển khai lên môi trường thật.',
+      'Sinh viên năm cuối Kỹ thuật Phần mềm (ĐH FPT), giảng viên lập trình tại MindX. Tôi làm website và web app responsive bằng React và Spring Boot, tự kết nối API và tự triển khai, vận hành trên AWS.',
     ctaPrimary: 'Liên hệ',
     ctaCv: 'Tải CV',
     available: 'Sẵn sàng',
@@ -85,7 +85,7 @@ const en: Dictionary = {
   meta: {
     title: 'Pham Van Duc — Web Developer · React & Spring Boot',
     description:
-      'Pham Van Duc — Web Developer (React, Spring Boot) in Ho Chi Minh City. Final-year Software Engineering student at FPT University and programming instructor at MindX. Projects: Viway, Nghia Hanh So, Landing Templates.',
+      'Pham Van Duc — Web Developer (React, Spring Boot) and Cloud (AWS) in Ho Chi Minh City. Final-year Software Engineering student at FPT University and programming instructor at MindX. Projects: Viway, Nghia Hanh So, Landing Templates.',
   },
   a11y: {
     skip: 'Skip to main content',
@@ -103,13 +103,13 @@ const en: Dictionary = {
     contact: 'Contact',
   },
   hero: {
-    role: 'Web Developer · React · Spring Boot',
+    role: 'Web Developer · React · Spring Boot · AWS',
     based: 'Ho Chi Minh City',
     taking: 'Looking for',
-    takingList: 'Web Developer · Fresher',
+    takingList: 'Web Developer · Cloud Fresher',
     contactLabel: 'Contact',
     intro:
-      'Final-year Software Engineering student (FPT University) and programming instructor at MindX. I build responsive websites and web apps with React and Spring Boot, wire up the APIs and deploy them myself.',
+      'Final-year Software Engineering student (FPT University) and programming instructor at MindX. I build responsive websites and web apps with React and Spring Boot, wire up the APIs, and deploy and run them on AWS myself.',
     ctaPrimary: 'Contact me',
     ctaCv: 'Download CV',
     available: 'Available for',

@@ -35,11 +35,11 @@ export const projects: Project[] = [
     title: 'Viway Fitness Pro',
     kind: { vi: 'Web app · Fitness & AI', en: 'Web app · Fitness & AI' },
     description: {
-      vi: 'Ứng dụng web tạo kế hoạch tập luyện và dinh dưỡng cá nhân hoá bằng AI từ chỉ số cơ thể, mục tiêu và ngân sách. Có trang quản trị, thử thách, điểm thưởng và giới hạn lượt dùng AI theo từng người dùng. Đang chạy thật trên tên miền riêng.',
-      en: 'A web app that generates personalized workout and meal plans with AI from body metrics, goals and budget. Includes an admin dashboard, challenges, rewards and per-user AI credits. Live on its own domain.',
+      vi: 'Ứng dụng web tạo kế hoạch tập luyện và dinh dưỡng cá nhân hoá bằng AI từ chỉ số cơ thể, mục tiêu và ngân sách. Có trang quản trị, thử thách, điểm thưởng và giới hạn lượt dùng AI theo từng người dùng. Chạy trên AWS: tôi chuyển từ ECS Fargate sang một máy EC2, sao lưu dữ liệu hằng ngày lên S3, đặt cảnh báo ngân sách, giảm khoảng hai phần ba chi phí mỗi tháng.',
+      en: 'A web app that generates personalized workout and meal plans with AI from body metrics, goals and budget. Includes an admin dashboard, challenges, rewards and per-user AI credits. Runs on AWS, where I moved it from ECS Fargate to one EC2 instance with daily S3 backups and budget alerts, cutting the monthly bill by about two thirds.',
     },
-    role: { vi: 'Full-stack · dự án cá nhân', en: 'Full-stack · personal project' },
-    tags: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'JWT', 'FastAPI', 'Docker'],
+    role: { vi: 'Full-stack & vận hành AWS · dự án cá nhân', en: 'Full-stack & AWS operations · personal project' },
+    tags: ['React', 'Spring Boot', 'PostgreSQL', 'FastAPI', 'Docker', 'AWS EC2', 'S3', 'IAM'],
     image: '/projects/viway-fitness.webp',
     screenshot: true,
     imageAlt: {
@@ -60,7 +60,7 @@ export const projects: Project[] = [
       en: 'Graduation capstone that is also being deployed for a commune: residents submit feedback through a Zalo Mini App, officials process it and residents track the result. Includes an AI (RAG) assistant for administrative questions. Currently in the MVP phase.',
     },
     role: { vi: 'Technical Lead · nhóm 4 người', en: 'Technical Lead · team of 4' },
-    tags: ['Zalo Mini App', 'REST API', 'RAG chatbot', 'Jira Scrum'],
+    tags: ['Zalo Mini App', 'REST API', 'RAG chatbot', 'Viettel IDC', 'Jira Scrum'],
     image: '/projects/nghia-hanh-so.webp',
     screenshot: true,
     imageAlt: {

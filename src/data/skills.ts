@@ -37,6 +37,15 @@ export const skillGroups: SkillGroup[] = [
     items: ['PostgreSQL', 'MySQL', 'Flyway', 'OpenAI API', 'Groq'],
   },
   {
+    id: 'cloud',
+    title: { vi: 'Cloud', en: 'Cloud' },
+    blurb: {
+      vi: 'Triển khai, giám sát, sao lưu và tối ưu chi phí hạ tầng trên AWS; Azure ở mức cơ bản.',
+      en: 'Deploying, monitoring, backing up and cost-optimizing infrastructure on AWS; Azure at a basic level.',
+    },
+    items: ['AWS EC2', 'ECS Fargate', 'RDS', 'S3', 'IAM', 'CloudWatch', 'AWS Budgets', 'Azure', 'Viettel IDC', 'Linux'],
+  },
+  {
     id: 'tools',
     title: { vi: 'Công cụ', en: 'Tools' },
     blurb: {
