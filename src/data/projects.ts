@@ -35,8 +35,8 @@ export const projects: Project[] = [
     title: 'Viway Fitness Pro',
     kind: { vi: 'Web app · Fitness & AI', en: 'Web app · Fitness & AI' },
     description: {
-      vi: 'Ứng dụng web tạo kế hoạch tập luyện và dinh dưỡng cá nhân hoá bằng AI từ chỉ số cơ thể, mục tiêu và ngân sách. Có trang quản trị, thử thách, điểm thưởng và giới hạn lượt dùng AI theo từng người dùng. Chạy trên AWS: tôi chuyển từ ECS Fargate sang một máy EC2, sao lưu dữ liệu hằng ngày lên S3, đặt cảnh báo ngân sách, giảm khoảng hai phần ba chi phí mỗi tháng.',
-      en: 'A web app that generates personalized workout and meal plans with AI from body metrics, goals and budget. Includes an admin dashboard, challenges, rewards and per-user AI credits. Runs on AWS, where I moved it from ECS Fargate to one EC2 instance with daily S3 backups and budget alerts, cutting the monthly bill by about two thirds.',
+      vi: 'Ứng dụng web tạo kế hoạch tập luyện và dinh dưỡng cá nhân hoá bằng AI từ chỉ số cơ thể, mục tiêu và ngân sách. Có trang quản trị, thử thách, điểm thưởng và giới hạn lượt dùng AI theo từng người dùng. Từng chạy trên AWS: tôi chuyển từ ECS Fargate sang một máy EC2, sao lưu dữ liệu hằng ngày lên S3, đặt cảnh báo ngân sách, giảm khoảng hai phần ba chi phí mỗi tháng. Backend hiện đã tắt, link demo chỉ xem được giao diện.',
+      en: 'A web app that generates personalized workout and meal plans with AI from body metrics, goals and budget. Includes an admin dashboard, challenges, rewards and per-user AI credits. I ran it on AWS, moving it from ECS Fargate to one EC2 instance with daily S3 backups and budget alerts, which cut the monthly bill by about two thirds. The backend is now shut down; the demo link shows the interface only.',
     },
     role: { vi: 'Full-stack & vận hành AWS · dự án cá nhân', en: 'Full-stack & AWS operations · personal project' },
     tags: ['React', 'Spring Boot', 'PostgreSQL', 'FastAPI', 'Docker', 'AWS EC2', 'S3', 'IAM'],

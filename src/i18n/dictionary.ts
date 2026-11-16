@@ -49,7 +49,7 @@ const vi = {
   projects: {
     heading: 'Dự án',
     sub: 'Một web app đang chạy thật, một đồ án triển khai cho xã, và các dự án cá nhân về frontend.',
-    demo: 'Xem demo',
+    demo: 'Xem giao diện',
     code: 'Mã nguồn',
     private: 'Mã nguồn riêng tư',
     role: 'Vai trò',
@@ -127,7 +127,7 @@ const en: Dictionary = {
   projects: {
     heading: 'Selected work',
     sub: 'A web app running in production, a capstone being deployed for a commune, and personal frontend projects.',
-    demo: 'Live demo',
+    demo: 'UI demo',
     code: 'Source',
     private: 'Private source',
     role: 'Role',
